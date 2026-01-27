@@ -42,6 +42,8 @@ SELECTED_TEMPLATE=${TEMPLATES[$?]}
 # 3. Project Name & Isolation Logic
 read -p "🚀 Enter the name of your new project: " PROJECT_NAME
 
+# DEFINIÇÃO DO CAMINHO: Um nível acima da raiz do Hub
+# Se o Hub está em D:/Dev/LaunchPad-Hub, o projeto irá para D:/Dev/PROJECT_NAME
 TARGET_DIR="$ROOT_DIR/../$PROJECT_NAME"
 
 echo -e "\n📦 Generating project at: $TARGET_DIR"
