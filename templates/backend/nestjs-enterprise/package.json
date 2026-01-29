@@ -16,7 +16,7 @@
     "test:debug": "vitest --inspect-brk --inspect --logHeapUsage --threads=false",
     "test:e2e": "vitest run --config ./vitest.config.e2e.mts",
     "test:e2e:watch": "vitest --config ./vitest.config.e2e.mts",
-    "prepare": "husky"
+    "prepare": "cd ../../.. && husky install templates/backend/nestjs-enterprise/.husky"
   },
   "dependencies": {
     "@nestjs/common": "^11.1.12",
