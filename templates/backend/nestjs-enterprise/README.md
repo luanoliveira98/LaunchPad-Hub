@@ -1,5 +1,19 @@
 # 🏛️ NestJS Enterprise Template
 
+<p align="left">
+  <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" alt="Prisma" />
+  <img src="https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white" alt="Vitest" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+</p>
+
+<p align="left">
+  <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square" alt="Maintained" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="License" />
+  <img src="https://img.shields.io/badge/Clean%20Architecture-Enabled-blue?style=flat-square" alt="Clean Arch" />
+</p>
+
 This is a high-level NestJS boilerplate designed for scalable, maintainable, and testable applications using **Clean Architecture** and **Domain-Driven Design (DDD)** principles.
 
 ## 🏗️ Architecture Overview
