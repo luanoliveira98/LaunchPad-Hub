@@ -20,7 +20,7 @@ const getTemplateNames = (dir) => {
   return templates;
 };
 
-const allowedScopes = ['LaunchPadHub', ...getTemplateNames(path.resolve(__dirname, 'templates'))];
+const allowedScopes = ['LaunchPad-Hub', ...getTemplateNames(path.resolve(__dirname, 'templates'))];
 
 module.exports = {
   extends: ['@commitlint/config-conventional'],
