@@ -1,0 +1,2 @@
+# Run commitlint by passing the temporary commit message file ($1)
+npx --no -- commitlint --edit "$1"
