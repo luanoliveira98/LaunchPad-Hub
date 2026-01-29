@@ -23,7 +23,7 @@ The project is structured into layers to ensure a strict separation of concerns:
 - **`src/domain`**: The core of the application. Contains Business Entities, Value Objects, and Repository Interfaces (Contracts). It has zero dependencies on external frameworks.
 - **`src/application`**: Orchestrates business logic using Use Cases. It depends only on the Domain layer and defines interfaces for technical services (Gateways).
 - **`src/infra`**: Implementation details. Contains the NestJS modules, HTTP Controllers, Prisma Repositories, and Environment configurations.
-- **`src/@shared`**: Common utilities, Base Classes (Entity, ValueObject), and Helpers (Either/Result patterns) used across all layers.
+- **`src/core`**: Common utilities, Base Classes (Entity, ValueObject), and Helpers (Either/Result patterns) used across all layers.
 
 ## 🛠️ Tech Stack
 
@@ -87,7 +87,7 @@ pnpm test:e2e
 
 ```Plaintext
 src/
-├── @shared/              # Shared logic & Base classes
+├── core/              # Shared logic & Base classes
 ├── domain/               # Enterprise Business Rules
 │   └── [context]/
 │       ├── entities/
