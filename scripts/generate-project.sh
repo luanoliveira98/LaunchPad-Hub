@@ -56,14 +56,22 @@ fi
 
 cp -r "$TEMPLATES_DIR/$SELECTED_CATEGORY/$SELECTED_TEMPLATE" "$TARGET_DIR"
 
-# 5. Initialize New Git Repository (Safely Isolated)
+echo -e "\n🛠️  Customizing Husky hooks..."
+
+# Call the Husky script passing the new project directory
+if [ -f "$ROOT_DIR/tooling/husky-template.sh" ]; then
+    bash "$ROOT_DIR/tooling/husky-template.sh" "$TARGET_DIR"
+fi
+
+# 5. Initialize Git in the new project
 cd "$TARGET_DIR" || exit
 git init
 git add .
-git commit -m "chore: initial commit from LaunchPad Hub ($SELECTED_TEMPLATE)"
 
-echo -e "\n✅ Success! Project generated safely outside the Hub."
-echo "👉 Path: $TARGET_DIR"
+# Use --no-verify for the initial setup commit to avoid hook restrictions
+git commit -m "chore[$SELECTED_TEMPLATE]: initial setup from LaunchPad Hub" --no-verify
 
-# 6. Return to Hub
+echo -e "\n✅ Project successfully generated at: $TARGET_DIR"
+echo "📢 Commit rule enabled: type[$SELECTED_TEMPLATE]: message"
+
 cd "$ROOT_DIR" || exit
