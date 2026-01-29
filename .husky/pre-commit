@@ -1,6 +1,3 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
 # 1. Get directories with modified (staged) files
 STAGED_DIRS=$(git diff --cached --name-only | cut -d/ -f1-3 | sort -u)
 
