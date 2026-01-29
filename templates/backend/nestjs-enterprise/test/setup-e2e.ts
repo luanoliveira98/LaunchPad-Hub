@@ -26,8 +26,8 @@ beforeAll(async () => {
   const databaseURL = generateUniqueDatabaseURL(schemaId);
   process.env.DATABASE_URL = databaseURL;
 
-  execSync('pnpm prisma migrate deploy');
-}, 30000);
+  execSync('npx prisma migrate deploy');
+});
 
 const prisma = new PrismaService();
 

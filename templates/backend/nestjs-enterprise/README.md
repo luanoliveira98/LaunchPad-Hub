@@ -47,24 +47,24 @@ cp .env.example .env
 ### 2. Install Dependencies
 
 ```bash
-pnpm install
+npm run install
 ```
 
 ### 3. Database Migration
 
 ```bash
-pnpm prisma migrate deploy
+npm run prisma migrate deploy
 ```
 
 ### 4. Running the App
 
 ```bash
 # development
-pnpm start:dev
+npm run start:dev
 
 # production mode
-pnpm build
-pnpm start:prod
+npm run build
+npm run start:prod
 ```
 
 ## 🧪 Testing Strategy
@@ -74,13 +74,13 @@ This template is configured with **Vitest** for maximum speed.
 - **Unit Tests:** Focus on Domain Entities and Application Use Cases (using In-Memory Repositories).
 
 ```bash
-pnpm test
+npm run test
 ```
 
 - **E2E Tests:** Focus on Infrastructure and HTTP routes (using a real/test database).
 
 ```bash
-pnpm test:e2e
+npm run test:e2e
 ```
 
 📂 Folder Structure Detail
