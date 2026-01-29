@@ -28,7 +28,6 @@ import { HttpModule } from './http/http.module';
     EnvModule,
     HttpModule,
   ],
-  controllers: [],
   providers: [
     {
       provide: APP_PIPE,

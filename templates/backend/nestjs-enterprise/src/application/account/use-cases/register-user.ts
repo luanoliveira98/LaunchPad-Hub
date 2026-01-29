@@ -1,8 +1,9 @@
-import type { HashGenerator } from '@/application/cryptography/hash-generator';
+import { HashGenerator } from '@/application/cryptography/hash-generator';
 import { left, type Either, right } from '@/core/helpers/either.helper';
 import { User } from '@/domain/account/entities/user';
 import { UserAlreadyExistsError } from '@/domain/account/errors/user-already-exists.error';
-import type { UsersRepository } from '@/domain/account/repositories/users.repository';
+import { UsersRepository } from '@/domain/account/repositories/users.repository';
+import { Injectable } from '@nestjs/common';
 
 interface RegisterUserUseCaseRequest {
   email: string;
@@ -14,6 +15,7 @@ type RegisterUserUseCaseResponse = Either<
   { user: User }
 >;
 
+@Injectable()
 export class RegisterUserUseCase {
   constructor(
     private readonly usersRepository: UsersRepository,
