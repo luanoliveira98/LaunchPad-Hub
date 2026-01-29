@@ -1,10 +1,5 @@
 #!/bin/bash
 
-TARGET_DIR=$1
-echo "🧪 Running quality checks for: $(basename "$TARGET_DIR")..."
-
-cd "$TARGET_DIR" || exit 1
-
 # 1. Run Unit Tests with Coverage
 echo "📊 Checking unit tests and coverage..."
 if ! npm run test:cov; then
