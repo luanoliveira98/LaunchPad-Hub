@@ -1,18 +1,23 @@
 #!/bin/bash
 
-# 1. Run Unit Tests with Coverage
-echo "📊 Checking unit tests and coverage..."
-if ! npm run test:cov; then
-  echo "❌ [ERROR] Unit tests failed or coverage threshold not met."
-  exit 1
+# Define o diretório de trabalho: 
+# Defines the working directory:
+# 1. The passed argument OR 2. The directory where the terminal is opened
+WORKING_DIR=${1:-"."}
+
+echo "🧪 [QUALITY CHECK] Checking directory: $WORKING_DIR"
+
+# Enters the folder to ensure npm finds the correct package.json
+cd "$WORKING_DIR" || { echo "❌ Directory not found"; exit 1; }
+
+if [ ! -f "package.json" ]; then
+  echo "❌ No package.json found in $WORKING_DIR. Skipping tests."
+  exit 0
 fi
 
-# 2. Run E2E Tests
-echo "🏁 Running E2E tests..."
-if ! npm run test:e2e; then
-  echo "❌ [ERROR] E2E tests failed."
-  exit 1
-fi
+echo "📊 Running tests and coverage in $(basename "$PWD")..."
 
-echo "✅ All checks passed! Proceeding with commit..."
-exit 0
+npm run test:cov || exit 1
+npm run test:e2e || exit 1
+
+echo "✅ Quality check passed for $(basename "$PWD")!"

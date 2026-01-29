@@ -1,4 +1,17 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-bash ./tooling/verify-quality.sh
+# 1. Get directories with modified (staged) files
+STAGED_DIRS=$(git diff --cached --name-only | cut -d/ -f1-3 | sort -u)
+
+# 2. For each modified directory, run the quality script
+for DIR in $STAGED_DIRS; do
+  if [ -f "$DIR/package.json" ]; then
+    bash "./tooling/verify-quality.sh" "$DIR"
+  fi
+done
+
+# 3. Also checks the root if there are changes there
+if git diff --cached --name-only | grep -qv "/"; then
+    bash "./tooling/verify-quality.sh" "."
+fi
