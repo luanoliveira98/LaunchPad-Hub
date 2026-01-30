@@ -12,12 +12,12 @@ STAGED_DIRS=$(git diff --cached --name-only | cut -d/ -f1-3 | sort -u)
 
 for DIR in $STAGED_DIRS; do
   if [ -f "$DIR/package.json" ]; then
-    bash "./tooling/verify-quality.sh" "$DIR" || exit 1
+    bash "./scripts/shared/verify-quality.sh" "$DIR" || exit 1
   fi
 done
 
 if git diff --cached --name-only | grep -qv "/"; then
-    bash "./tooling/verify-quality.sh" "." || exit 1
+    bash "./scripts/shared/verify-quality.sh" "." || exit 1
 fi
 
 echo "✅ All checks passed. Commit created!"

@@ -51,10 +51,10 @@ TARGET_DIR="$ROOT_DIR/$TEMPLATES_BASE_DIR/$SELECTED_CATEGORY/$TEMPLATE_NAME"
 
 echo -e "\n🏗️ Creating template structure at $TARGET_DIR..."
 
-# 3. Inject Shared Configs
-if [ -d "$ROOT_DIR/tooling/shared-configs" ]; then
-    echo "🛠️  Injecting shared-configs..."
-    cp -rf "$ROOT_DIR/tooling/shared-configs/." "$TARGET_DIR/"
+# 3. Inject Shared Scripts
+if [ -d "$ROOT_DIR/scripts/shared" ]; then
+    echo "🛠️  Injecting shared-scripts..."
+    cp -rf "$ROOT_DIR/scripts/shared/." "$TARGET_DIR/"
 fi
 
 # 4. Create Generic package.json

@@ -57,8 +57,8 @@ cp -r "$TEMPLATES_DIR/$SELECTED_CATEGORY/$SELECTED_TEMPLATE" "$TARGET_DIR"
 echo -e "\n🛠️  Customizing Husky hooks..."
 
 # Call the Husky script passing the new project directory
-if [ -f "$ROOT_DIR/tooling/husky-template.sh" ]; then
-    bash "$ROOT_DIR/tooling/husky-template.sh" "$TARGET_DIR"
+if [ -f "$ROOT_DIR/scripts/shared/husky-template.sh" ]; then
+    bash "$ROOT_DIR/scripts/shared/husky-template.sh" "$TARGET_DIR"
 fi
 
 # 5. Initialize Git in the new project
